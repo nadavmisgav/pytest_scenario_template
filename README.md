@@ -95,3 +95,7 @@ Disables the setup and teardown methods from each scenario
 ```
 
 > Must filter only one scenario when used!
+
+## Example
+
+See the example branch
