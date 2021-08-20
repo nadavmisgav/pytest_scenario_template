@@ -135,7 +135,7 @@ def pytest_collection_modifyitems(session, config, items):
             items.extend(suite)
 
 
-_scenario_setup_failed: Dict[str, bool] = DefaultDict(lambda: False)
+_scenario_setup_failed: Dict[str, bool] = {}
 
 
 def pytest_runtest_makereport(item, call):
@@ -159,6 +159,7 @@ def pytest_runtest_setup(item):
     """
     Hook runtest_setup to skip test if their scenario setup has failed
     """
-    scenario = scenario_re.match(item.name).groups()[0]
-    if _scenario_setup_failed[scenario]:
-        pytest.skip(f"Setup for {scenario} failed, skipping...")
+    if not item.originalname == "test_setup":
+        scenario = scenario_re.match(item.name).groups()[0]
+        if _scenario_setup_failed[scenario]:
+            pytest.skip(f"Setup for {scenario} failed, skipping...")
