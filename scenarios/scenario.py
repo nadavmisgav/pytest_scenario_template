@@ -3,6 +3,9 @@ from abc import abstractmethod, ABC
 
 
 class Scenario(ABC):
+    """
+    Base class for each scenario.
+    """
     name: str
     description: str
     scenarios: Dict[str, "Scenario"] = {}

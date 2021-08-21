@@ -1,3 +1,3 @@
 from .scenario import Scenario
 
-# import all scenarios
+# import all implemented scenarios
