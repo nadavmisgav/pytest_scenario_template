@@ -98,4 +98,4 @@ Disables the setup and teardown methods from each scenario
 
 ## Example
 
-See the example branch
+See the [example](https://github.com/nadavmisgav/pytest_scenario_template/tree/example) branch.
