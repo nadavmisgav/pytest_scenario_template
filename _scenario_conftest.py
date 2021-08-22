@@ -1,4 +1,4 @@
-from attr import dataclass, field
+from dataclasses import dataclass, field
 import pytest
 import re
 from typing import Callable, DefaultDict, Dict, List
@@ -12,7 +12,7 @@ class TestSuite:
     Class to describe a suite of tests
     """
     setup: Callable = None
-    tests: List[Callable] = field(factory=list)
+    tests: List[Callable] = field(default_factory=list)
     teardown: Callable = None
 
 
